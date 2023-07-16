@@ -4,6 +4,8 @@ Halyk Todo List Api Provides Simple CRUD Service for Tasks
 
 ## Configuration
 
+If PostgreSQL Database not have uuid extension use this query in your database: "CREATE EXTENSION IF NOT EXISTS "uuid-ossp";"
+
 Swagger Documentation at : http://localhost:8000/internal/docs/index.html
 
 Configuration is fully loaded from environment. Table below shows the list of environment variables that could be used.
