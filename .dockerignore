@@ -1,0 +1,9 @@
+.vscode/
+build/
+vendor/
+logs/
+Taskfile
+.gitignore
+.dockerignore
+.env
+.env.example
