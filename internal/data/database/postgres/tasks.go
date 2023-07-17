@@ -256,7 +256,7 @@ func (pg *pgConnection) CompleteTask(ctx context.Context, id string) error {
 
 func (pg *pgConnection) CompleteCheckListItem(ctx context.Context, id string) error {
 	tx := pg.db.WithContext(ctx).Begin()
-	query := tx.Model(&models.CheckList{}).Where("id = ?", id)
+	query := tx.Model(&entities.CheckList{}).Where("id = ?", id)
 	defer func() {
 		if r := recover(); r != nil {
 			tx.Rollback()

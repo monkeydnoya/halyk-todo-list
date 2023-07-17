@@ -63,7 +63,7 @@ func (pg *pgConnection) CreateTag(ctx context.Context, tag models.CreateTag) (mo
 
 func (pg *pgConnection) UpdateTag(ctx context.Context, id string, tag models.UpdateTag) error {
 	tx := pg.db.WithContext(ctx).Begin()
-	query := tx.Model(&models.Tag{}).Where("id = ?", id)
+	query := tx.Model(&entities.Tag{}).Where("id = ?", id)
 	defer func() {
 		if r := recover(); r != nil {
 			tx.Rollback()
